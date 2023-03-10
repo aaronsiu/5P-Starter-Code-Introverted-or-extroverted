@@ -1,0 +1,102 @@
+<!DOCTYPE html> <html><head>
+        <title>5.P Starter Code [Introverted or extroverted?]</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;display=swap" rel="stylesheet">
+    <style>body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #17d3ff;
+    text-align: center;
+}
+
+img {
+    width: 400px;
+}
+
+.submit {
+   width : 100px;
+    height: 50px;
+}
+
+.result {
+    font-size: 50px ;
+}
+</style></head>
+    <body>
+        <div class="title">
+            <h1>Are you introverted or extroverted?</h1>
+        </div>
+        <div class="questions">
+            <h4>How old are you?</h4>
+            <img src="https://hips.hearstapps.com/hmg-prod/images/multigenerational-females-in-red-walking-in-royalty-free-illustration-1665081866.jpg">
+            <p> Answer: </p> 
+           <input class="answer" placeholder="Type Your Age Here">
+          
+            
+            <h4>Choose what you would do on a rainy day</h4>
+            <img src="https://www.holdenbeachvacations.com/blog/wp-content/uploads/2022/07/rainy-day-activities.jpg">
+        </div>
+        <button class="Book"> 
+            <p> Read a book </p>
+        </button>
+        <button class="Family">
+            <p> Talk with family </p>
+        </button>
+        <div>
+        <button class="CalmMusic">
+            <p> Listen to calm music </p>
+        </button>
+        <button class="SocialMedia">
+            <p> On social media </p>
+        </button>
+        </div>
+          <button class="submit"> Submit </button>
+        <div class="result">
+            You are...
+        </div>
+        
+
+
+
+    
+<script>
+/*__POPCODESTART__*/
+var button = document.querySelector(".submit");
+var book = false;
+var bookelement = document.querySelector(".Book");
+var familyelement = document.querySelector(".Family");
+var calmelement = document.querySelector(".CalmMusic");
+var mediaelement = document.querySelector(".SocialMedia");
+var family = false;
+var calm = false;
+var media = false;
+
+bookelement.onclick = function () {
+  book = true;
+};
+
+familyelement.onclick = function () {
+  family = true;
+};
+
+calmelement.onclick = function () {
+  calm = true;
+};
+
+mediaelement.onclick = function () {
+  media = true;
+};
+
+button.onclick = function () {
+  var result = document.querySelector(".result");
+  var answer = document.querySelector(".answer").value;
+
+  if (answer <= 18 && book === true) {
+    result.innerHTML = "Introverted";
+  } else if (answer <= 18 && family === true) {
+    result.innerHTML = "Extroverted";
+  } else if (answer <= 18 && calm === true) {
+    result.innerHTML = "Introverted";
+  } else if (answer <= 18 && media === true) {
+    result.innerHTML = "Extroverted";
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbImJ1dHRvbiIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciIsImJvb2siLCJib29rZWxlbWVudCIsImZhbWlseWVsZW1lbnQiLCJjYWxtZWxlbWVudCIsIm1lZGlhZWxlbWVudCIsImZhbWlseSIsImNhbG0iLCJtZWRpYSIsIm9uY2xpY2siLCJyZXN1bHQiLCJhbnN3ZXIiLCJ2YWx1ZSIsImlubmVySFRNTCJdLCJtYXBwaW5ncyI6IkFBQUEsSUFBSUEsTUFBTSxHQUFDQyxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsU0FBdkIsQ0FBWDtBQUNBLElBQUlDLElBQUksR0FBRyxLQUFYO0FBQ0EsSUFBSUMsV0FBVyxHQUFDSCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsT0FBdkIsQ0FBaEI7QUFDQSxJQUFJRyxhQUFhLEdBQUNKLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixTQUF2QixDQUFsQjtBQUNBLElBQUlJLFdBQVcsR0FBQ0wsUUFBUSxDQUFDQyxhQUFULENBQXVCLFlBQXZCLENBQWhCO0FBQ0EsSUFBSUssWUFBWSxHQUFDTixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsY0FBdkIsQ0FBakI7QUFDQSxJQUFJTSxNQUFNLEdBQUcsS0FBYjtBQUNBLElBQUlDLElBQUksR0FBRyxLQUFYO0FBQ0EsSUFBSUMsS0FBSyxHQUFHLEtBQVo7O0FBQ0FOLFdBQVcsQ0FBQ08sT0FBWixHQUFvQixZQUFZO0FBQzFCUixFQUFBQSxJQUFJLEdBQUcsSUFBUDtBQUNMLENBRkQ7O0FBSUFFLGFBQWEsQ0FBQ00sT0FBZCxHQUFzQixZQUFZO0FBQzlCSCxFQUFBQSxNQUFNLEdBQUcsSUFBVDtBQUNILENBRkQ7O0FBSUFGLFdBQVcsQ0FBQ0ssT0FBWixHQUFvQixZQUFZO0FBQzVCRixFQUFBQSxJQUFJLEdBQUcsSUFBUDtBQUNILENBRkQ7O0FBSUFGLFlBQVksQ0FBQ0ksT0FBYixHQUFxQixZQUFZO0FBQzdCRCxFQUFBQSxLQUFLLEdBQUcsSUFBUjtBQUNILENBRkQ7O0FBSUFWLE1BQU0sQ0FBQ1csT0FBUCxHQUFlLFlBQVc7QUFDdEIsTUFBSUMsTUFBTSxHQUFDWCxRQUFRLENBQUNDLGFBQVQsQ0FBdUIsU0FBdkIsQ0FBWDtBQUNBLE1BQUlXLE1BQU0sR0FBQ1osUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLEVBQWtDWSxLQUE3Qzs7QUFDSCxNQUFJRCxNQUFNLElBQUksRUFBVixJQUFnQlYsSUFBSSxLQUFLLElBQTdCLEVBQ0E7QUFBRVMsSUFBQUEsTUFBTSxDQUFDRyxTQUFQLEdBQW9CLGFBQXBCO0FBQW9DLEdBRHRDLE1BRVEsSUFBSUYsTUFBTSxJQUFJLEVBQVYsSUFBZ0JMLE1BQU0sS0FBSyxJQUEvQixFQUNMO0FBQUNJLElBQUFBLE1BQU0sQ0FBQ0csU0FBUCxHQUFvQixhQUFwQjtBQUFvQyxHQURoQyxNQUVBLElBQUtGLE1BQU0sSUFBSSxFQUFWLElBQWdCSixJQUFJLEtBQUssSUFBOUIsRUFDTDtBQUFDRyxJQUFBQSxNQUFNLENBQUNHLFNBQVAsR0FBb0IsYUFBcEI7QUFBb0MsR0FEaEMsTUFFQSxJQUFJRixNQUFNLElBQUcsRUFBVCxJQUFlSCxLQUFLLEtBQUssSUFBN0IsRUFDTDtBQUFDRSxJQUFBQSxNQUFNLENBQUNHLFNBQVAsR0FBb0IsYUFBcEI7QUFBb0M7QUFDeEMsQ0FYRCIsInNvdXJjZXNDb250ZW50IjpbImxldCBidXR0b249ZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5zdWJtaXRcIik7XG5sZXQgYm9vayA9IGZhbHNlOyBcbmxldCBib29rZWxlbWVudD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLkJvb2tcIik7XG5sZXQgZmFtaWx5ZWxlbWVudD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLkZhbWlseVwiKTtcbmxldCBjYWxtZWxlbWVudD1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLkNhbG1NdXNpY1wiKTtcbmxldCBtZWRpYWVsZW1lbnQ9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5Tb2NpYWxNZWRpYVwiKTtcbmxldCBmYW1pbHkgPSBmYWxzZTtcbmxldCBjYWxtID0gZmFsc2U7XG5sZXQgbWVkaWEgPSBmYWxzZTtcbmJvb2tlbGVtZW50Lm9uY2xpY2s9ZnVuY3Rpb24gKCkge1xuICAgICAgYm9vayA9IHRydWU7XG59O1xuXG5mYW1pbHllbGVtZW50Lm9uY2xpY2s9ZnVuY3Rpb24gKCkge1xuICAgIGZhbWlseSA9IHRydWU7XG59O1xuXG5jYWxtZWxlbWVudC5vbmNsaWNrPWZ1bmN0aW9uICgpIHtcbiAgICBjYWxtID0gdHJ1ZTtcbn07XG5cbm1lZGlhZWxlbWVudC5vbmNsaWNrPWZ1bmN0aW9uICgpIHtcbiAgICBtZWRpYSA9IHRydWU7XG59O1xuXG5idXR0b24ub25jbGljaz1mdW5jdGlvbigpIHtcbiAgICBsZXQgcmVzdWx0PWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmVzdWx0XCIpO1xuICAgIGxldCBhbnN3ZXI9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5hbnN3ZXJcIikudmFsdWU7ICBcbiBpZiAoYW5zd2VyIDw9IDE4ICYmIGJvb2sgPT09IHRydWUgKSBcbiB7IHJlc3VsdC5pbm5lckhUTUwgPSAoXCJJbnRyb3ZlcnRlZFwiKTt9IFxuICAgIGVsc2UgaWYgKGFuc3dlciA8PSAxOCAmJiBmYW1pbHkgPT09IHRydWUgKVxuICAgIHtyZXN1bHQuaW5uZXJIVE1MID0gKFwiRXh0cm92ZXJ0ZWRcIik7fVxuICAgIGVsc2UgaWYgKCBhbnN3ZXIgPD0gMTggJiYgY2FsbSA9PT0gdHJ1ZSlcbiAgICB7cmVzdWx0LmlubmVySFRNTCA9IChcIkludHJvdmVydGVkXCIpO31cbiAgICBlbHNlIGlmIChhbnN3ZXIgPD0xOCAmJiBtZWRpYSA9PT0gdHJ1ZSlcbiAgICB7cmVzdWx0LmlubmVySFRNTCA9IChcIkV4dHJvdmVydGVkXCIpO31cbn07XG4gICAgICAgIFxuXG5cblxuIl19</script></body></html>
